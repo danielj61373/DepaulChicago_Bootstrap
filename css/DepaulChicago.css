@@ -124,7 +124,7 @@ img {
             text-decoration: underline;
         }
 
-@media (max-width: 767px) {
+@media (max-width: 400px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: #ffffff;
     }
@@ -144,62 +144,6 @@ img {
 
 /*#endregion */
 
-/*#region Intro styles */
-
-.intro {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    color: white;
-    background: url(../img/Chicago_HDR.jpg) no-repeat top center scroll;
-    background-color: black;
-    background-size: cover;
-}
-    .intro .intro-body {
-        display: table-cell;
-        vertical-align: middle;
-    }
-        .intro .intro-body .brand-heading {
-            margin: 25px 0 25px;
-            font-size: 32px;
-            text-align: left;
-        }
-        .intro .intro-body .intro-text {
-            margin: 150px 0 50px;
-            font-size: 25px;
-            text-align: left;
-        }
-
-        .intro .intro-body .Right-List {
-            list-style-type: none;
-            padding: 25px;
-            margin: 25px;
-            font-size: 25px;
-            text-align: right;
-            color: white;
-        }
-
-
-/*Media Formating*/
-@media(min-width:800px) { /* @media(min-width:768px) {*/
-    .intro {
-        height: 100%;
-        padding: 0;
-    }
-
-        .intro .intro-body .brand-heading {
-            font-size: 100px;
-        }
-
-        .intro .intro-body .intro-text {
-            font-size: 25px;
-        }
-}
-
-/*#endregion */
-
 /*#region Anchor styles */
 
 /*Add a description here*/
@@ -215,7 +159,7 @@ a {
     }
 
 /*Add a description here*/
-@media(min-width:768px) {
+@media(max-width:800px) {
     p {
         margin: 0 0 35px;
         font-size: 20px;
@@ -247,38 +191,102 @@ a {
 /*#endregion */
 
 
+/*#region Intro styles */
 
+.container-fluid {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    background-color: black;
+    background-size: cover;
+}
+    .carousel-caption {
+        display: table-cell;
+        vertical-align: text-top;
+    }
+        .carousel-caption .brand-heading {
+            margin: 25px 0 150px;
+            font-size: 70px;
+            text-align: left;
+        }
+       .carousel-caption .intro-text {
+            /*margin: 25px 0 50px;*/
+            font-size: 30px;
+            text-align: left;
+        }
+
+        .carousel-caption .Right-List {
+            list-style-type: none;
+            /*padding: 25px;*/
+            margin: 25px 0 50px;
+            font-size: 30px;
+            text-align: right;
+            color: white;
+        }
+
+
+/*Media Formating*/
+@media(max-width:800px) { /* @media(min-width:768px) {*/
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+        .carousel-caption .brand-heading {
+            /*margin: 5px 0 5px;*/
+            font-size: 50px;
+        }
+
+        .carousel-caption .intro-text {
+            /*margin: 5px 0 5px;*/
+            font-size: 25px;
+        }
+        .carousel-caption .Right-List {
+            /*margin: 5px 0 5px;*/
+            font-size: 15px;
+        }
+}
+
+/*#endregion */
 
 /*#region carousel*/
 .carousel {
     margin-bottom: 4rem;
+    position: relative;
 }
 
-.carousel {
-    position: relative;
+
+.carousel img {
+    min-width: 100%;
+    width:100%;
+    height:auto;
 }
 
 .carousel-inner > .carousel-item > a > img, .carousel-inner > .carousel-item > img {
     line-height: 1;
+    min-width:100%;
+    height:auto;
 }
 
 .carousel-inner > .carousel-item > a > img, .carousel-inner > .carousel-item > img, .img-fluid {
+    position: center;
     display: block;
     max-width: 100%;
+    min-width: 100%;
     height: auto;
 }
 
 .carousel-item > img {
-    position: absolute;
+    position: center;
     top: 0;
     left: 0;
     min-width: 100%;
-    height: 32rem;
+    height: auto;
 }
 
-img {
-    vertical-align: middle;
-}
 
 .carousel-indicators {
     top: 1.5rem;
@@ -289,8 +297,13 @@ img {
     margin-left: 0;
 }
 
-@media (min-width: 544px) .carousel-indicators {
-    bottom: 20px;
+@media (min-width: 800px) {
+    .carousel-indicators {
+        bottom: 20px;
+    }
+    .carousel {
+        /*visibility: hidden*/
+    }
 }
 
 .carousel-indicators {
