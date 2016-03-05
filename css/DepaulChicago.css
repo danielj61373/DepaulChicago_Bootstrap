@@ -35,12 +35,12 @@ p {
 }
 
 img {
-    margin: 25px 0px 25px;
+    margin: 25px 0px 25px;*/
 }
+
 /*#endregion */
 
 /*#region Navbar styles*/
-/*Generated from http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0*/
 /*#ff0000 = red*/
 /*#000000 = Black*/
 /*#ffffff; = White*/
@@ -48,10 +48,10 @@ img {
 .navbar-default {
     background-color: #000000;
     border-color: #000000;
+    opacity: 0.8;
     font-size: 18px;
     font-family: "Helvetica Neue",Helvetica;
     text-transform: uppercase;
-    /*margin: 0 0 0px;*/
     vertical-align: middle;
     text-align: center;
 }
@@ -73,7 +73,7 @@ img {
     .navbar-default .navbar-nav > li > a {
         color: #ffffff;
         text-align: center;
-        padding: 10px;
+        padding: 5px;
         margin: 10px 50px 10px 50px;
     }
 
@@ -144,34 +144,6 @@ img {
 
 /*#endregion */
 
-/*#region Anchor styles */
-
-/*Add a description here*/
-a {
-    color: white;
-    transition: all .2s ease-in-out;
-}
-    /*Add a description here*/
-    a:hover,
-    a:focus {
-        text-decoration: none;
-        color: red;
-    }
-
-/*Add a description here*/
-@media(max-width:800px) {
-    p {
-        margin: 0 0 35px;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-}
-/*Add a description here*/
-.light {
-    font-weight: 400;
-}
-/*#endregion */
-
 /*#region Circle icon Styles */
 
 /*The Circle icon*/
@@ -190,7 +162,6 @@ a {
 
 /*#endregion */
 
-
 /*#region Intro styles */
 
 .container-fluid {
@@ -203,72 +174,94 @@ a {
     background-color: black;
     background-size: cover;
 }
-    .carousel-caption {
-        display: table-cell;
-        vertical-align: text-top;
+
+.carousel-caption {
+    display: table-cell;
+    vertical-align: text-top;
+}
+
+    .carousel-caption .brand-heading {
+        margin: 25px 0 150px;
+        font-size: 70px;
+        text-align: left;
     }
-        .carousel-caption .brand-heading {
-            margin: 25px 0 150px;
-            font-size: 70px;
-            text-align: left;
-        }
-       .carousel-caption .intro-text {
-            /*margin: 25px 0 50px;*/
-            font-size: 30px;
-            text-align: left;
-        }
 
-        .carousel-caption .Right-List {
-            list-style-type: none;
-            /*padding: 25px;*/
-            margin: 25px 0 50px;
-            font-size: 30px;
-            text-align: right;
-            color: white;
-        }
+    .carousel-caption .intro-text {
+        font-size: 30px;
+        text-align: left;
+    }
 
+    .carousel-caption .Right-List {
+        list-style-type: none;
+        margin: 25px 0 50px;
+        font-size: 30px;
+        text-align: right;
+        color: white;
+    }
+
+/* Fade transition for carousel items */
+.carousel-inner .item {
+    left: 0 !important;
+    transition: opacity .2s;
+}
+
+.carousel-control {
+    background-image: none !important; /* remove background gradients on controls */
+}
+/* Fade controls with items */
+.next.left,
+.prev.right {
+    opacity: .25;
+    z-index: 1;
+}
+
+.active.left,
+.active.right {
+    opacity: 1;
+    z-index: 2;
+}
 
 /*Media Formating*/
-@media(max-width:800px) { /* @media(min-width:768px) {*/
+@media(max-width:400px) { /* @media(min-width:768px) {*/
     .intro {
         height: 100%;
         padding: 0;
     }
 
-        .carousel-caption .brand-heading {
-            /*margin: 5px 0 5px;*/
-            font-size: 50px;
-        }
+    .carousel-caption .brand-heading {
+        /*margin: 5px 0 5px;*/
+        font-size: 50px;
+    }
 
-        .carousel-caption .intro-text {
-            /*margin: 5px 0 5px;*/
-            font-size: 25px;
-        }
-        .carousel-caption .Right-List {
-            /*margin: 5px 0 5px;*/
-            font-size: 15px;
-        }
+    .carousel-caption .intro-text {
+        /*margin: 5px 0 5px;*/
+        font-size: 25px;
+    }
+
+    .carousel-caption .Right-List {
+        /*margin: 5px 0 5px;*/
+        font-size: 15px;
+    }
 }
 
 /*#endregion */
 
-/*#region carousel*/
+/*#region Carousel*/
 .carousel {
     margin-bottom: 4rem;
     position: relative;
 }
 
-
-.carousel img {
-    min-width: 100%;
-    width:100%;
-    height:auto;
-}
+    .carousel img {
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+    }
 
 .carousel-inner > .carousel-item > a > img, .carousel-inner > .carousel-item > img {
     line-height: 1;
-    min-width:100%;
-    height:auto;
+    min-width: 100%;
+    height: auto;
 }
 
 .carousel-inner > .carousel-item > a > img, .carousel-inner > .carousel-item > img, .img-fluid {
@@ -289,32 +282,22 @@ a {
 
 
 .carousel-indicators {
-    top: 1.5rem;
-    right: 1.5rem;
-    bottom: auto;
-    left: auto;
-    width: 1rem;
-    margin-left: 0;
-}
-
-@media (min-width: 800px) {
-    .carousel-indicators {
-        bottom: 20px;
-    }
-    .carousel {
-        /*visibility: hidden*/
-    }
-}
-
-.carousel-indicators {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     z-index: 15;
     width: 60%;
     padding-left: 0;
     margin-left: -30%;
     text-align: center;
-    list-style: none;
+    list-style: url();
 }
+
+
+@media (max-width: 400px) {
+    .carousel-indicators {
+        bottom: 20px;
+    }
+}
+
 /*#endregion */
